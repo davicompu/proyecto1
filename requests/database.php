@@ -5,7 +5,7 @@ The database.php is intended to save credentials to later return a msqli connect
 function init_database(){ //function that returns the connection
   $servername = "localhost";
   $username = "root";
-  $password = "";
+  $password = "root";
   $dbname = "proyecto";
 
   // Create connection
