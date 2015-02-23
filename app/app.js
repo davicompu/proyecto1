@@ -8,11 +8,6 @@ myApp.config(function($routeProvider) {
       when('/registeruser', {
         templateUrl: 'views/user/create.html',
         controller: 'CreateUser'
-      })
-      .
-      when('/user:user', {
-        templateUrl: 'views/user/create.html',
-        controller: 'CreateUser'
       });
 
   });

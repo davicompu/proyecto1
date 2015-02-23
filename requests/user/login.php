@@ -30,7 +30,7 @@ if ($result->num_rows > 0) {
     $response=array('authenticated'=>$authenticated,'user'=>$r);
     print json_encode($response);
 } else {
-    $authenticated="NOT FOUND";
+    $authenticated="NOT_FOUND";
     $response=array('authenticated'=>$authenticated);
     print json_encode($response);
 }

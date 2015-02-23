@@ -15,19 +15,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $connection=init_database();
 
 
-  $sql = "INSERT INTO users (username, password, firstname,lastname,age)
-  VALUES ('$username', '$password', '$firstname','$lastname','$age')";
-
+  $sql = "INSERT INTO users (username, password, firstname,lastname,age) VALUES ('$username', '$password', '$firstname','$lastname','$age')";
+  //print $sql;
   if ($connection->query($sql) === TRUE) {
-  $status="CREATED";
+    $status="CREATED";
+    $response=array('status'=>$status);
+    print json_encode($response);
   } else {
-  $status=$connection->error;
+    $error=$connection->errno;
+    //print_r($connection);
+    if($error==1062){
+      $status="DUPLICATE";
+      $response=array('status'=>$status);
+      print json_encode($response);
+    }
+    else{
+      $response=array('status'=>$error);
+      print json_encode($response);
+    }
   }
 
-  $response=array('status'=>$status);
-
-
-  print json_encode($response);
   close_database($connection);
 }
 ?>
