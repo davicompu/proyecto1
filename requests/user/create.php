@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $error=$connection->errno;
     //print_r($connection);
     if($error==1062){
-      $status="DUPLICATE";
+      $status="DUPLICATED";
       $response=array('status'=>$status);
       print json_encode($response);
     }
