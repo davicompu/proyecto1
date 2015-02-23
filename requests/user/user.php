@@ -13,11 +13,9 @@ mysql_real_escape_string - is used to avoid at an initial phase sql injections.
 
 */
 $data = json_decode(file_get_contents("php://input"));//We use this line of code because $_POST comes empty
-$username = mysql_real_escape_string($data->username);//Getting the username value
-$password = mysql_real_escape_string($data->password);//Getting the password value
-$authenticated="PENDING";//default authentication flag
+$id = mysql_real_escape_string($data->id);//Getting the id value
 
-$sql = "SELECT id,firstname, lastname FROM users WHERE username='$username' AND password='$password' ;";//Query
+$sql = "SELECT * FROM users WHERE id=$id ;";//Query
 $result = $connection->query($sql);//executing query
 //echo "query: ".$sql;
 if ($result->num_rows > 0) {//if founds at least one row it goes inside the if
@@ -28,17 +26,18 @@ if ($result->num_rows > 0) {//if founds at least one row it goes inside the if
     while($row = $result->fetch_assoc()) {
         //echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
         //filling the user array
-        $r["id"]=$row["id"];
-        $r["username"]=$username;
+        $r["username"]=$row["username"];
+        $r["password"]=$row["password"];
         $r["firstname"]=$row["firstname"];
         $r["lastname"]=$row["lastname"];
+        $r["age"]=$row["age"];
     }
-    $authenticated="FOUND";//Notifying that we found the user
-    $response=array('authenticated'=>$authenticated,'user'=>$r);//sending the flag and the user
+    $status="FOUND";//Notifying that we found the user
+    $response=array('status'=>$status,'user'=>$r);//sending the flag and the user
     echo json_encode($response);//enconding to json and echoing the response
 } else {
-    $authenticated="NOT_FOUND";//Notifying that we did not found the user
-    $response=array('authenticated'=>$authenticated); //sending only the flag
+    $status="NOT_FOUND";//Notifying that we did not found the user
+    $response=array('status'=>$status); //sending only the flag
     echo json_encode($response);//enconding to json and echoing the response
 }
  close_database($connection);//closing the connection
