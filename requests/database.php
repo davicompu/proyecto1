@@ -3,7 +3,7 @@
 function init_database(){
   $servername = "localhost";
   $username = "root";
-  $password = "";
+  $password = "root";
   $dbname = "proyecto";
 
   // Create connection
