@@ -1,6 +1,8 @@
 <?php
-
-function init_database(){
+/*
+The database.php is intended to save credentials to later return a msqli connection object.
+*/
+function init_database(){ //function that returns the connection
   $servername = "localhost";
   $username = "root";
   $password = "";
@@ -16,7 +18,7 @@ return $conn;
 }
 
 
-function close_database($conn){
+function close_database($conn){//function that closes the connection passed as parameter
 $conn->close();
 }
 
