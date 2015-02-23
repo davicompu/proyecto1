@@ -7,6 +7,6 @@ myApp.config(function($routeProvider) {
       }).
       when('/registeruser', {
         templateUrl: 'views/user/create.html',
-        //controller: 'Home'
+        controller: 'Login'
       });
   });
