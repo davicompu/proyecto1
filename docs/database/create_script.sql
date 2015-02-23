@@ -12,9 +12,8 @@ CREATE TABLE IF NOT EXISTS `users` (
   `password` VARCHAR(45) NOT NULL,
   `firstname` VARCHAR(45) NOT NULL,
   `lastname` VARCHAR(45) NOT NULL,
-  `age` INT NOT NULL,
-  PRIMARY KEY (`id`, `username`, `password`),
-  UNIQUE INDEX `username_UNIQUE` (`username` ASC))
+  `age` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id`, `username`))
 ENGINE = InnoDB;
 
 
