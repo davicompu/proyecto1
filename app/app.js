@@ -5,7 +5,7 @@ myApp.config(function($routeProvider) {
         templateUrl: 'views/home/login.html',
         //controller: 'Home'
       }).
-      when('registeruser', {
+      when('/registeruser', {
         templateUrl: 'views/user/create.html',
         //controller: 'Home'
       });
