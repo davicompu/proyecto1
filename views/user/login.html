@@ -1,9 +1,8 @@
 <div class="row">
   <div class="large-12 medium-12 columns">
-    <h3>Registrar Usuario</h3>
+    <h3>Ingresar Sesi&oacute;n</h3>
   </div>
 </div>
-
 <div class="row">
   <div class="large-4 medium-4 columns">
   Username
@@ -23,34 +22,17 @@
 </div>
 
 <div class="row">
-  <div class="large-4 medium-4 columns">
-  Nombre
-  </div>
-  <div class="large-4 medium-4 columns">
-  <input type="text" ng-model="firstname"/>
+  <div class="large-12 medium-12 columns">
+    <button ng-click="login()">Ingresar</button>
   </div>
 </div>
-
-<div class="row">
-  <div class="large-4 medium-4 columns">
-  Apellido
-  </div>
-  <div class="large-4 medium-4 columns">
-  <input type="text" ng-model="lastname"/>
-  </div>
-</div>
-
-<div class="row">
-  <div class="large-4 medium-4 columns">
-  Edad
-  </div>
-  <div class="large-4 medium-4 columns">
-  <input type="text" ng-model="age"/>
-  </div>
-</div>
-
 <div class="row">
   <div class="large-12 medium-12 columns">
-<button ng-click="create()">Registrar</button>
+    <h4>{{success()}}</h4>
+  </div>
+</div>
+<div class="row">
+  <div class="large-12 medium-12 columns">
+    <a ng-href="#/registeruser">Crear usuario</a>
   </div>
 </div>

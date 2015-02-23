@@ -3,7 +3,7 @@ factories.Login=function ($http){
   return {
        getFoos: function() {
             //return the promise directly.
-            return $http.get('/foos')
+            return $http.get('../requests')
                       .then(function(result) {
                            //resolve the promise as the data
                            return result.data;
@@ -13,15 +13,3 @@ factories.Login=function ($http){
 };
 
 myapp.factory(factories);
-myApp.factory('myService', function($http) {
-   return {
-        getFoos: function() {
-             //return the promise directly.
-             return $http.get('/foos')
-                       .then(function(result) {
-                            //resolve the promise as the data
-                            return result.data;
-                        });
-        }
-   }
-});

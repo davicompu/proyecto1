@@ -2,11 +2,17 @@ var myApp=angular.module('myApp',['ngRoute']);
 myApp.config(function($routeProvider) {
     $routeProvider.
       when('/', {
-        templateUrl: 'views/home/login.html',
-        //controller: 'Home'
+        templateUrl: 'views/user/login.html',
+        controller: 'Login'
       }).
       when('/registeruser', {
         templateUrl: 'views/user/create.html',
-        controller: 'Login'
+        controller: 'CreateUser'
+      })
+      .
+      when('/user:user', {
+        templateUrl: 'views/user/create.html',
+        controller: 'CreateUser'
       });
+
   });
