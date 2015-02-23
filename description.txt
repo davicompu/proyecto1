@@ -1,0 +1,30 @@
+Instrucciones
+Construir una aplicación Web sencilla que implemente un flujo de login completo.
+
+Pantallas:
+
+- Inicial (index): campos para username y password, botón de login, link a pantalla de registro.
+
+- Registro: campos para username, password, nombre, apellido y edad. Al enviar la información, esta debe almacenarse en la base de datos.
+
+- Ingreso exitoso: muestra el nombre, apellido y edad del usuario.
+
+- Ingreso fallido: muestra un mensaje de error y ofrece un link para volver a la pantalla inicial.
+
+Observaciones:
+
+- Al registrar a un nuevo usuario, su información debe guardarse en la base de datos.
+
+- Los nombres de usuario deben ser únicos (no pueden existir 2 o más usuarios con el mismo username).
+
+- El código fuente debe estar correctamente documentado y formateado (nomenclatura de variables y funciones, comentarios, indentación de llaves, etc.)
+
+- Las páginas deben tener diseño visual. Puedes usar Bootstrap o plantillas .css para decorar tu página.
+
+- No puedes utilizar librerías externas o frameworks para conectarte a la base de datos o extraer la información.
+
+El envío debe incluir:
+
+- Modelo de la base de datos
+- Archivos fuente .php
+- Información de conexión a la base de datos (en caso de ser distinta a root/root).
