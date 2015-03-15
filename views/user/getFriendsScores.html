@@ -1,0 +1,33 @@
+<div class="row">
+    <h4>Friends Scores</h4>
+</div>
+<div class="row">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Usuario</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Edad</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="user in users">
+                <td>{{user.username}}</td>
+                <td>{{user.firstname}}</td>
+                <td>{{user.lastname}}</td>
+                <td>{{user.age}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="row">
+    <nav>
+        <ul class="pagination">
+            <li data-ng-repeat="page in pages">
+                <a ng-click="getUserFromPage(page)">{{page}}</a>
+            </li>
+        </ul>
+    </nav>
+</div>
